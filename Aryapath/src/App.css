@@ -1,0 +1,133 @@
+:root {
+  /* Core Backgrounds */
+  --bg-color: #fefaf6; /* Ivory Sandstone */
+  --text-color: #1b1b1b; /* Deep Charcoal */
+  --foreground: #1b1b1b;
+  --background: #fefaf6;
+
+  /* Brand Accent – Terracotta & Saffron */
+  --accent-color: #e46b3d; /* Terracotta Orange */
+  --accent-dark: #c0522c;  /* Deep Clay */
+  --accent-fade: #f7b896;  /* Soft Peach Sand */
+  
+  /* Elements */
+  --card-bg: rgba(255, 255, 255, 0.7);
+  --btn-bg: linear-gradient(90deg, #e46b3d, #c0522c);
+  --btn-hover: 0 0 15px rgba(228, 107, 61, 0.4);
+  --glow-color: rgba(228, 107, 61, 0.15);
+
+  /* Overlays & Borders */
+  --overlay-bg: rgba(255, 255, 255, 0.92);
+  --overlay-text: #2e2e2e;
+  --border-color: rgba(0, 0, 0, 0.08);
+
+  /* Supporting Shades */
+  --secondary-color: #d9a441; /* Saffron Gold */
+  --secondary-fade: #f2d188;  /* Light Saffron */
+  --muted-color: #bba89a;     /* Muted Sandstone */
+}
+
+[data-theme="dark"] {
+  /* Core Backgrounds */
+  --bg-color: #14110f; /* Deep Charcoal Brown */
+  --text-color: #f7f4f0; /* Ivory White */
+  --foreground: #ffffff;
+  --background: #14110f;
+
+  /* Brand Accent – same hues adjusted for darkness */
+  --accent-color: #e46b3d; /* Terracotta Orange */
+  --accent-dark: #c0522c;  /* Deep Clay */
+  --accent-fade: #f7b896;  /* Soft Peach Sand */
+
+  /* Elements */
+  --card-bg: rgba(28, 26, 24, 0.8);
+  --btn-bg: linear-gradient(90deg, #e46b3d, #c0522c);
+  --btn-hover: 0 0 20px rgba(228, 107, 61, 0.4);
+  --glow-color: rgba(228, 107, 61, 0.25);
+
+  /* Overlays & Borders */
+  --overlay-bg: rgba(20, 17, 15, 0.9);
+  --overlay-text: #f7f4f0;
+  --border-color: rgba(255, 255, 255, 0.08);
+
+  /* Supporting Shades */
+  --secondary-color: #d9a441; /* Saffron Gold */
+  --secondary-fade: #f2d188;  /* Light Saffron */
+  --muted-color: #8a7768;     /* Muted Clay */
+}
+
+/* Smooth transitions for theme switching */
+* {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+/* Custom Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-dark);
+}
+
+@font-face {
+  font-family: IncredibleIndiaPrimary;
+  src: url(./fonts/Lora-Regular.ttf);
+}
+
+@font-face {
+  font-family: IncredibleIndiaSecondary;
+  src: url(./fonts/Lora-VariableFont_wght.ttf);
+}
+
+/* Apply fonts to the entire app */
+html,body {
+  width: 100%;
+  height: 100vh;
+  font-family: 'IncredibleIndiaSecondary', serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'IncredibleIndiaPrimary', serif;
+}
